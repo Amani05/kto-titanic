@@ -2,6 +2,7 @@ import logging
 
 import joblib
 import pandas as pd
+
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, median_absolute_error
 import mlflow # Nouvel import pour mlflow
 from mlflow.models import infer_signature # Nouvel import pour inférer la signature du modèle
