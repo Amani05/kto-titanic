@@ -27,7 +27,6 @@ env:
   MINIO_API_ROUTE_NAME: minio-api
   MLFLOW_TRACKING_ROUTE_NAME: mlflow
 
-
 jobs:
   train:
     runs-on: ubuntu-latest
