@@ -96,8 +96,6 @@ jobs:
         run: |
           docker build -f k8s/api/Dockerfile -t ${{ env.API_IMAGE_NAME }}:latest .
           docker push ${{ env.API_IMAGE_NAME }}:latest
-<<<<<<< HEAD
-=======
       - name: Configure API manifest with OAuth2 domain
         run: |
           sed -i 's|PLACEHOLDER_OAUTH2_DOMAIN|${{ vars.OAUTH2_DOMAIN }}|g' k8s/api/api.yaml
@@ -109,7 +107,6 @@ jobs:
           API_ROUTE_URL=$(kubectl get route ${{ env.API_ROUTE_NAME }} -o jsonpath='{.spec.host}')
           echo "API_ROUTE_URL=https://$API_ROUTE_URL" >> "$GITHUB_ENV"
           echo "🚀 API deployed at: ${API_ROUTE_URL}"
->>>>>>> 5fd7335 (feat : API déployée)
       - name: Asleep kto-mlflow with dailyclean
         run: |
           curl -X POST $DAILYCLEAN_ROUTE_URL/pods/stop
